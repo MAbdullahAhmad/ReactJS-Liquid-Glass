@@ -1,0 +1,7 @@
+add .gitignore. and make sure for glass effect there is single component only that is used as parent in order to use effect. with important 3-4 configs only and having a default also
+
+Also there is mistake in overall design:
+- only header will have liquid glass background
+- and a theme toggle on bottom left that has fixed position will have this effect
+- nothing else will have effect
+- website will have 13 sections. one dark one light. some text some imeages (svg diagonal). etc.
