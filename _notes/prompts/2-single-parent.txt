@@ -1,0 +1,1 @@
+add .gitignore. and make sure for glass effect there is single component only that is used as parent in order to use effect. with important 3-4 configs only and having a default also

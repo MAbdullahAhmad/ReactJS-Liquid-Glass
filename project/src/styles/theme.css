@@ -1,0 +1,28 @@
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: #f7f7fb;
+  --fg: #111217;
+  --muted: #5c5f66;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0b0c10;
+  --fg: #f5f6fa;
+  --muted: #9aa0a6;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+/* Ensure Bootstrap components inherit theme colors nicely */
+body {
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+/* Utilities */
+.text-muted { color: var(--muted) !important; }
+

@@ -1,0 +1,10 @@
+/* Basic resets and helpers */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+
+/* Smoothen font rendering */
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+/* Add space for fixed navbar */
+main { display: block; }
+
