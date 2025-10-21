@@ -103,4 +103,11 @@ body {
 
 /* Utilities */
 .lead { color: var(--muted); }
+/* Floating theme toggle placement */
+.floating_theme_toggle {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 1031;
+}
 

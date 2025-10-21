@@ -1,34 +1,22 @@
-/* Glassy fixed navbar */
-.glass_navbar {
-  --glass-bg: rgba(255, 255, 255, 0.08);
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --glass-shadow: 0 4px 20px rgba(0,0,0,0.12);
-  backdrop-filter: blur(10px) saturate(140%);
-  -webkit-backdrop-filter: blur(10px) saturate(140%);
-  background: var(--glass-bg);
-  border-bottom: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-}
-
-/* Liquid glass container */
+/* Liquid glass container (single source of the effect) */
 .liquid_glass {
   position: relative;
-  border-radius: 16px;
+  border-radius: var(--lg-radius, 16px);
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, var(--lg-border-opacity, 0.16));
 }
 
 .liquid_glass_backdrop {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(120px 120px at 10% 20%, rgba(255, 0, 184, 0.35), transparent 60%),
-    radial-gradient(140px 140px at 80% 30%, rgba(0, 160, 255, 0.35), transparent 60%),
-    radial-gradient(180px 180px at 30% 80%, rgba(0, 230, 180, 0.35), transparent 60%);
-  filter: blur(20px) saturate(120%);
-  -webkit-filter: blur(20px) saturate(120%);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+    radial-gradient(120px 120px at 10% 20%, rgba(255, 0, 184, var(--lg-glow, 0.35)), transparent 60%),
+    radial-gradient(140px 140px at 80% 30%, rgba(0, 160, 255, var(--lg-glow, 0.35)), transparent 60%),
+    radial-gradient(180px 180px at 30% 80%, rgba(0, 230, 180, var(--lg-glow, 0.35)), transparent 60%);
+  filter: blur(calc(var(--lg-blur, 12px) * 1.6)) saturate(var(--lg-saturate, 1.4));
+  -webkit-filter: blur(calc(var(--lg-blur, 12px) * 1.6)) saturate(var(--lg-saturate, 1.4));
+  backdrop-filter: blur(var(--lg-blur, 12px));
+  -webkit-backdrop-filter: blur(var(--lg-blur, 12px));
 }
 
 .liquid_glass_content {
@@ -37,13 +25,14 @@
   background: rgba(255, 255, 255, 0.06);
 }
 
-/* Theme-aware tweaks */
-:root[data-theme='dark'] .glass_navbar {
-  --glass-bg: rgba(12, 12, 14, 0.45);
-  --glass-border: rgba(255, 255, 255, 0.12);
-}
-
 :root[data-theme='dark'] .liquid_glass_content {
   background: rgba(12, 12, 14, 0.45);
 }
 
+/* Optional tone overrides */
+.lg_tone_light .liquid_glass_content { background: rgba(255, 255, 255, 0.06); }
+.lg_tone_dark .liquid_glass_content { background: rgba(12, 12, 14, 0.45); }
+
+/* Header wrapper without glass logic (glass comes from Liquid_Glass) */
+.site_header { position: fixed; top: 0; left: 0; right: 0; z-index: 1030; padding: .5rem 0; }
+.site_header .liquid_glass { border-radius: 12px; }

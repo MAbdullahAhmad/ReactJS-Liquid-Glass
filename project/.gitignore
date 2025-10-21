@@ -1,1 +1,24 @@
+# dependencies
 node_modules
+
+# production build
+dist
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# editors/OS
+.DS_Store
+.idea/
+.vscode/
+
+# tooling
+.vite/
+coverage/
+
+# env variants (keep root .env tracked)
+.env.local
+.env.*.local

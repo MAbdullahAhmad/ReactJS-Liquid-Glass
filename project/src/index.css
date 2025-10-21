@@ -8,3 +8,13 @@ html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 /* Add space for fixed navbar */
 main { display: block; }
 
+/* Reserve space for the fixed header */
+body { padding-top: 72px; }
+
+/* Floating theme toggle placement */
+.floating_theme_toggle {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 1031;
+}
